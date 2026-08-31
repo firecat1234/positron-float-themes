@@ -1,0 +1,49 @@
+{
+  "name": "float-spring-positron-theme",
+  "displayName": "Float Spring for Positron",
+  "description": "A Positron color theme port of Float's built-in Spring palette.",
+  "version": "0.1.0",
+  "publisher": "kaist-local",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firecat1234/positron-float-spring-theme.git"
+  },
+  "homepage": "https://github.com/firecat1234/positron-float-spring-theme#readme",
+  "bugs": {
+    "url": "https://github.com/firecat1234/positron-float-spring-theme/issues"
+  },
+  "engines": {
+    "vscode": "^1.74.0",
+    "positron": "^2026.8.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "positron",
+    "theme",
+    "float",
+    "spring",
+    "purple",
+    "green"
+  ],
+  "extensionKind": [
+    "ui"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Float Spring",
+        "uiTheme": "vs",
+        "path": "./themes/float-spring-color-theme.json"
+      },
+      {
+        "label": "Float Spring Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/float-spring-night-color-theme.json"
+      }
+    ]
+  }
+}
