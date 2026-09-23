@@ -144,9 +144,82 @@ def text_background(key, colours):
 def build_theme(palette, night):
     suffix = "-night" if night else ""
     template = json.loads((ROOT / f"themes/float-spring{suffix}-color-theme.json").read_text())
-    theme = transform(template, colour_map(palette["slots"], night))
+    slots = palette["slots"]
+    if palette["id"] == "blossom":
+        # Float's built-in Blossom legacy palette deliberately reverses the
+        # structural/accent families: pink glass/chrome, green details.
+        # App.css then dilutes those colours over almost-white glass surfaces.
+        slots = {
+            "c1Light": slots["c2Med"], "c1Med": slots["c2Dark"], "c1Dark": "#8f2967",
+            "c2Light": slots["c1Light"], "c2Med": slots["c1Med"], "c2Dark": slots["c1Dark"],
+            "veryLight": "#ffffff", "veryDark": slots["veryDark"],
+        }
+    theme = transform(template, colour_map(slots, night))
     theme["name"] = "Float " + palette["label"] + (" Night" if night else "")
     colours = theme["colors"]
+    if palette["id"] == "blossom":
+        if night:
+            colours.update({
+                "activityBar.background": "#26333a", "activityBar.foreground": "#a8f5ab",
+                "titleBar.activeBackground": "#453544", "titleBar.inactiveBackground": "#34313b",
+                "sideBar.background": "#223139", "sideBarSectionHeader.background": "#303b43",
+                "statusBar.background": "#243c32", "statusBar.foreground": "#a8f5ab",
+            })
+        else:
+            # Match Float's rendered proportions, not solid blocks of its raw
+            # neon-green slot or the darker magenta used for small controls.
+            colours.update({
+                "editor.background": "#ffffff", "editor.foreground": "#24333d",
+                "activityBar.background": "#fbf7fb", "activityBar.foreground": "#308047",
+                "activityBar.inactiveForeground": "#738278", "activityBar.border": "#e8e3e8",
+                "titleBar.activeBackground": "#f8def6", "titleBar.activeForeground": "#24333d",
+                "titleBar.inactiveBackground": "#fbecfa", "titleBar.inactiveForeground": "#58665d",
+                "titleBar.border": "#e5cce1", "sideBar.background": "#fcfafc",
+                "sideBar.foreground": "#24333d", "sideBarTitle.foreground": "#52695a",
+                "sideBarSectionHeader.background": "#f9eef8", "sideBarSectionHeader.foreground": "#52695a",
+                "panel.background": "#fbfcfc", "terminal.background": "#fbfcfc",
+                "positronConsole.background": "#fbfcfc", "statusBar.background": "#f2faf3",
+                "statusBar.foreground": "#28723d", "statusBar.border": "#d9eadc",
+                "button.background": "#f7bff3", "button.foreground": "#05420f",
+                "button.hoverBackground": "#f3aeed", "button.secondaryBackground": "#f1f8f2",
+                "button.secondaryForeground": "#28723d", "button.secondaryHoverBackground": "#e2f3e5",
+                "list.activeSelectionBackground": "#f8def6", "list.activeSelectionForeground": "#24333d",
+                "positronVariables.activeSelectionBackground": "#f8def6",
+                "positronVariables.activeSelectionForeground": "#24333d",
+                "positronActionBar.background": "#f9f5f9", "positronActionBar.foreground": "#52695a",
+                "positronModalDialog.titleBarBackground": "#f8def6",
+                "positronModalDialog.titleBarForeground": "#24333d",
+                "positronModalDialog.defaultButtonBackground": "#f7bff3",
+                "positronModalDialog.defaultButtonForeground": "#05420f",
+                "positronModalDialog.defaultButtonHoverBackground": "#f3aeed",
+                "editorGroupHeader.tabsBackground": "#fcfafc", "tab.inactiveBackground": "#fcfafc",
+                "tab.activeForeground": "#24333d", "tab.inactiveForeground": "#657268",
+                "tab.activeBorderTop": "#4aed1d", "activityBar.activeBorder": "#4aed1d",
+                "panelTitle.activeBorder": "#4aed1d", "focusBorder": "#308047",
+                "editorCursor.foreground": "#308047", "editorLineNumber.activeForeground": "#308047",
+                "editor.lineHighlightBackground": "#fdf9fc", "icon.foreground": "#308047",
+                "textLink.foreground": "#28723d", "textLink.activeForeground": "#05420f",
+                "commandCenter.foreground": "#24333d", "commandCenter.border": "#d5c5d3",
+            })
+            # Most text stays slate; pink and green provide distinct code cues.
+            syntax = ["#657b71", "#8f2967", "#28723d", "#8b557f", "#52695a", "#76536d",
+                      "#24333d", "#657268", "#8f2967", "#28723d", "#76536d", "#76536d",
+                      "#28723d", "#8b557f", "#b42332"]
+            for rule, colour in zip(theme["tokenColors"], syntax):
+                rule["settings"]["foreground"] = colour
+            semantic = {
+                "namespace": "#8b557f", "type": "#76536d", "class": "#76536d", "enum": "#76536d",
+                "interface": "#76536d", "struct": "#76536d", "typeParameter": "#8f2967",
+                "function": "#52695a", "method": "#52695a", "macro": "#8f2967", "variable": "#24333d",
+                "variable.readonly": "#8b557f", "parameter": "#657268", "property": "#28723d",
+                "enumMember": "#8b557f", "event": "#8f2967", "keyword": "#8f2967", "modifier": "#8f2967",
+                "comment": "#657b71", "string": "#28723d", "number": "#8b557f", "regexp": "#28723d", "operator": "#8f2967",
+            }
+            for key, colour in semantic.items():
+                if isinstance(theme["semanticTokenColors"][key], str):
+                    theme["semanticTokenColors"][key] = colour
+                else:
+                    theme["semanticTokenColors"][key]["foreground"] = colour
     # Preserve familiar success/error semantics even in orange or cherry palettes.
     green, green_bright = ("#6fce96", "#9fe8b8") if night else ("#166d2a", "#26823d")
     for prefix in ("terminal", "positronConsole"):

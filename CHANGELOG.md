@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 — 2026-09-23
+
+- Match Blossom to Float's rendered appearance: white work surfaces, a pale pink title bar, and green details instead of large green panels.
+- Use Blossom's actual legacy palette roles for pink chrome and green accents; give its Night variant slate surfaces with a muted pink header.
+- Refresh the Blossom preview and retain the original eight source swatches.
+
 ## 0.2.0 — 2026-09-22
 
 - Rename the collection to **Float Themes for Positron** and the repository to `positron-float-themes`.

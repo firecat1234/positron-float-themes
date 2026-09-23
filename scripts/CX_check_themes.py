@@ -79,7 +79,12 @@ for entry in entries:
         assert hashlib.sha256(json.dumps(theme, sort_keys=True).encode()).hexdigest() == SPRING_HASHES[theme["name"]]
         continue
     palette = next(p for p in PALETTES if entry["label"] in ("Float " + p["label"], "Float " + p["label"] + " Night"))
-    assert colours["editor.background"] == palette["slots"]["veryDark" if night else "veryLight"]
+    expected_background = "#ffffff" if palette["id"] == "blossom" and not night else palette["slots"]["veryDark" if night else "veryLight"]
+    assert colours["editor.background"] == expected_background
+    if palette["id"] == "blossom" and not night:
+        assert colours["titleBar.activeBackground"] == "#f8def6", "Blossom uses a pale pink header."
+        assert contrast(colours["activityBar.background"], "#ffffff") < 1.2, "Keep large Blossom surfaces near white."
+        assert colours["tab.activeBorderTop"] == palette["slots"]["c1Med"], "Green belongs in small details."
     for fg, bg in PAIRS:
         background = composite(colours[bg], colours["editor.background"])
         ratio = contrast(colours[fg], background)
