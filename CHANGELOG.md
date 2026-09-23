@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2 — 2026-09-23
+
+- Give Blossom's light status bar the original mint (`#A8F5AB`) background with deep green (`#05420F`) text, including windows without a folder open.
+- Refresh the Blossom preview. Keep tabs, buttons, syntax colours, and all Night themes unchanged.
+
 ## 0.2.1 — 2026-09-23
 
 - Match Blossom to Float's rendered appearance: white work surfaces, a pale pink title bar, and green details instead of large green panels.

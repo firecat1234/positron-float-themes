@@ -2,7 +2,7 @@
   "name": "float-spring-positron-theme",
   "displayName": "Float Themes for Positron",
   "description": "All six Float palettes for Positron, each with light and Night variants.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "publisher": "kaist-local",
   "license": "UNLICENSED",
   "private": true,

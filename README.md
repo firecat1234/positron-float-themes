@@ -6,14 +6,14 @@ Colours carry through the editor, terminal, Console, Variables, Data Explorer, P
 
 ## Install
 
-1. Download **[float-positron-themes-0.2.1.vsix](https://github.com/firecat1234/positron-float-themes/releases/download/v0.2.1/float-positron-themes-0.2.1.vsix)** from the [latest release](https://github.com/firecat1234/positron-float-themes/releases/latest).
+1. Download **[float-positron-themes-0.2.2.vsix](https://github.com/firecat1234/positron-float-themes/releases/download/v0.2.2/float-positron-themes-0.2.2.vsix)** from the [latest release](https://github.com/firecat1234/positron-float-themes/releases/latest).
 2. In Positron's Command Palette, run **Extensions: Install from VSIX...** and choose the file.
 3. Run **Preferences: Color Theme** and choose a **Float** theme.
 
 Or install from a terminal:
 
 ```powershell
-positron --install-extension .\float-positron-themes-0.2.1.vsix
+positron --install-extension .\float-positron-themes-0.2.2.vsix
 ```
 
 Already using Float Spring? Install this VSIX to upgrade. The extension keeps its original internal ID, `kaist-local.float-spring-positron-theme`, so you do not get a second copy. **Float Spring** and **Float Spring Night** retain their existing names and colours.
@@ -30,7 +30,7 @@ Lavender and purple with mint and pear-green accents. Choose **Float Spring** or
 
 ### Blossom
 
-White work surfaces, a pale pink title bar, and green details, matching Blossom as rendered in Float. Its Night version uses slate surfaces with a muted pink header. Choose **Float Blossom** or **Float Blossom Night**.
+White work surfaces, a pale pink title bar, a mint status bar, and green details, matching Blossom as rendered in Float. Its Night version uses slate surfaces with a muted pink header. Choose **Float Blossom** or **Float Blossom Night**.
 
 ![Blossom palette: primary A8F5AB, 4AED1D, 05420F; accent F8F7F7, F7BFF3, D24BA1; light E8F5F7; dark 1E3038.](assets/CX_blossom.png)
 
@@ -69,7 +69,7 @@ With Python 3.10+ and Node.js installed:
 ```powershell
 python scripts/CX_build_themes.py
 python scripts/CX_check_themes.py
-npx --yes @vscode/vsce package --out float-positron-themes-0.2.1.vsix
+npx --yes @vscode/vsce package --out float-positron-themes-0.2.2.vsix
 ```
 
 To regenerate the colour cards, install Pillow and run:
