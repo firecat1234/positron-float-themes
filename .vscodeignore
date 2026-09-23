@@ -1,3 +1,7 @@
 .git/**
 .gitignore
 *.vsix
+scripts/**
+CX_palettes.json
+**/__pycache__/**
+output/**

@@ -1,18 +1,18 @@
 {
   "name": "float-spring-positron-theme",
-  "displayName": "Float Spring for Positron",
-  "description": "A Positron color theme port of Float's built-in Spring palette.",
-  "version": "0.1.0",
+  "displayName": "Float Themes for Positron",
+  "description": "All six Float palettes for Positron, each with light and Night variants.",
+  "version": "0.2.0",
   "publisher": "kaist-local",
   "license": "UNLICENSED",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/firecat1234/positron-float-spring-theme.git"
+    "url": "https://github.com/firecat1234/positron-float-themes.git"
   },
-  "homepage": "https://github.com/firecat1234/positron-float-spring-theme#readme",
+  "homepage": "https://github.com/firecat1234/positron-float-themes#readme",
   "bugs": {
-    "url": "https://github.com/firecat1234/positron-float-spring-theme/issues"
+    "url": "https://github.com/firecat1234/positron-float-themes/issues"
   },
   "engines": {
     "vscode": "^1.74.0",
@@ -23,11 +23,16 @@
   ],
   "keywords": [
     "positron",
-    "theme",
+    "themes",
     "float",
+    "light",
+    "dark",
     "spring",
-    "purple",
-    "green"
+    "blossom",
+    "ash",
+    "cappucino",
+    "sunset",
+    "plum"
   ],
   "extensionKind": [
     "ui"
@@ -43,7 +48,62 @@
         "label": "Float Spring Night",
         "uiTheme": "vs-dark",
         "path": "./themes/float-spring-night-color-theme.json"
+      },
+      {
+        "label": "Float Blossom",
+        "uiTheme": "vs",
+        "path": "./themes/float-blossom-color-theme.json"
+      },
+      {
+        "label": "Float Blossom Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/float-blossom-night-color-theme.json"
+      },
+      {
+        "label": "Float Ash",
+        "uiTheme": "vs",
+        "path": "./themes/float-ash-color-theme.json"
+      },
+      {
+        "label": "Float Ash Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/float-ash-night-color-theme.json"
+      },
+      {
+        "label": "Float Cappucino",
+        "uiTheme": "vs",
+        "path": "./themes/float-cappucino-color-theme.json"
+      },
+      {
+        "label": "Float Cappucino Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/float-cappucino-night-color-theme.json"
+      },
+      {
+        "label": "Float Sunset Citrus",
+        "uiTheme": "vs",
+        "path": "./themes/float-sunset-citrus-color-theme.json"
+      },
+      {
+        "label": "Float Sunset Citrus Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/float-sunset-citrus-night-color-theme.json"
+      },
+      {
+        "label": "Float Midnight Plum",
+        "uiTheme": "vs",
+        "path": "./themes/float-midnight-plum-color-theme.json"
+      },
+      {
+        "label": "Float Midnight Plum Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/float-midnight-plum-night-color-theme.json"
       }
     ]
+  },
+  "scripts": {
+    "build": "python scripts/CX_build_themes.py",
+    "cards": "python scripts/CX_build_themes.py --cards",
+    "check": "python scripts/CX_check_themes.py"
   }
 }

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "spring",
+    "label": "Spring",
+    "source": "frontend/src/themes/spring.js",
+    "description": "Lavender and purple with mint and pear-green accents.",
+    "slots": {
+      "c1Light": "#e4d9f3",
+      "c1Med": "#630ac3",
+      "c1Dark": "#340865",
+      "c2Light": "#86eaa0",
+      "c2Med": "#21b228",
+      "c2Dark": "#166d2a",
+      "veryLight": "#ffffff",
+      "veryDark": "#090d17"
+    }
+  },
+  {
+    "id": "blossom",
+    "label": "Blossom",
+    "source": "frontend/src/themes/blossom.js",
+    "description": "Fresh greens, blossom pink, and cool floral whites.",
+    "slots": {
+      "c1Light": "#a8f5ab",
+      "c1Med": "#4aed1d",
+      "c1Dark": "#05420f",
+      "c2Light": "#f8f7f7",
+      "c2Med": "#f7bff3",
+      "c2Dark": "#d24ba1",
+      "veryLight": "#e8f5f7",
+      "veryDark": "#1e3038"
+    }
+  },
+  {
+    "id": "ash",
+    "label": "Ash",
+    "source": "frontend/src/themes/ash.js",
+    "description": "Oat and charcoal neutrals with ember-orange accents.",
+    "slots": {
+      "c1Light": "#d8d0c4",
+      "c1Med": "#727983",
+      "c1Dark": "#343332",
+      "c2Light": "#f5c3a1",
+      "c2Med": "#c84a1b",
+      "c2Dark": "#91533b",
+      "veryLight": "#f7f1e8",
+      "veryDark": "#181514"
+    }
+  },
+  {
+    "id": "cappucino",
+    "label": "Cappucino",
+    "source": "frontend/src/themes/cappucino.js",
+    "description": "Warm espresso and cream with cherry-red accents.",
+    "slots": {
+      "c1Light": "#ebab77",
+      "c1Med": "#593217",
+      "c1Dark": "#130a01",
+      "c2Light": "#edc8d1",
+      "c2Med": "#bc1831",
+      "c2Dark": "#630712",
+      "veryLight": "#fffaf5",
+      "veryDark": "#0e0600"
+    }
+  },
+  {
+    "id": "sunset-citrus",
+    "label": "Sunset Citrus",
+    "source": "frontend/src/themes/sunsetCitrus.js",
+    "description": "Twilight teal and deep blue with a citrus-orange flare.",
+    "slots": {
+      "c1Light": "#6fe8ff",
+      "c1Med": "#159ca0",
+      "c1Dark": "#123a5d",
+      "c2Light": "#f5efde",
+      "c2Med": "#ff8a1f",
+      "c2Dark": "#bb450a",
+      "veryLight": "#fff9ef",
+      "veryDark": "#07111f"
+    }
+  },
+  {
+    "id": "midnight-plum",
+    "label": "Midnight Plum",
+    "source": "frontend/src/themes/midnightPlum.js",
+    "description": "Plum and lavender with warm ivory and burnt-orange accents.",
+    "slots": {
+      "c1Light": "#ecd9ff",
+      "c1Med": "#904ac9",
+      "c1Dark": "#17032a",
+      "c2Light": "#f0e9df",
+      "c2Med": "#dc5414",
+      "c2Dark": "#3d0727",
+      "veryLight": "#fff7fb",
+      "veryDark": "#100714"
+    }
+  }
+]
